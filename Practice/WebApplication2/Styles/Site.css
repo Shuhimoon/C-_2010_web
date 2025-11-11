@@ -1,0 +1,38 @@
+﻿/*Day1 CSS*/
+.modal-overlay {
+    position: fixed;
+    left: 0; top: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.5);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+.modal {
+    background: #fff;
+    border-radius: 6px;
+    padding: 20px;
+    width: 360px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+}
+.modal-header {font-weight: bold; margin-bottom: 10px; }
+.modal-footer {text-align: right; margin-top: 15px; }
+.btn {padding:6px 12px; border:1px solid #888; border-radius:3px; cursor:pointer; background:#eee; }
+
+
+
+/*Site1.Master TopMenu CSS*/
+#topMenu {
+    background: #629C7A;
+    border-radius: 6px;
+    padding: 10px;
+}
+#topMenu a {
+    color: #fff;
+    margin-right: 20px;
+    text-decoration: none;
+    font-weight: bold;
+}
+#topMenu a:hover {
+    color:#CCC291;
+}

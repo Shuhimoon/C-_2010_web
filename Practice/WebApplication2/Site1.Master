@@ -1,0 +1,23 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="WebApplication2.Site1" %>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>My Practice</title>
+    <link href="~/Styles/Site.css" rel="stylesheet" type="text/css" runat="server" />
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server" />
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div id="topMenu">
+            <a href="Default.aspx">首頁</a>
+            <a href="Day1.aspx">Day1</a>
+            <a href="Day2.aspx">Day2</a>
+            <a href="Day3.aspx">Day3</a>
+            <a href="Day4.aspx">Day4</a>
+        </div>
+        
+        <!-- 內容區塊 -->
+        <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+    </form>
+</body>
+</html>
