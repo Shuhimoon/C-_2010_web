@@ -1,0 +1,174 @@
+﻿html,
+body {
+    /* 限制瀏覽器 縮放大小 ，配合first-child+html body*/
+    min-width: 620px;
+    
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    
+    
+}
+
+body {
+    /*IE7 color*/
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#474747', endColorstr='#121A29', GradientType=0);
+  
+    /* other  Browser Color*/
+    background: linear-gradient(225deg, #474747 0%, #121A29 100%);
+    color:  #e6eef8;
+    
+    
+    /* 讓他坪鋪*/
+    display: flex;
+    flex-direction: column;
+   
+}
+
+.imagestyle{
+    width: 20px;
+    height: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+.tMenu {
+    background: linear-gradient(180deg, #488789 0%, #76B5B7 100%);
+    /* IE7 漸層 */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#488789', endColorstr='#76B5B7', GradientType=0);
+    
+
+    border-radius: 6px;
+    padding: 12px;
+    margin: 10px;
+    
+    /* 清除浮動 + IE7 hasLayout */
+    overflow: hidden;
+    *zoom: 1;
+    white-space: nowrap;
+    text-align: left;
+    
+    /* 垂直置中（全瀏覽器） */
+    line-height: 20px; /* 依內容調整 */
+}
+
+
+.tMenu:before,
+.tMenu:after {
+    content: "";
+    display: table;
+}
+.tMenu:after {
+    clear: both;
+}
+
+/* Home 離邊框距離 
+    選最後一個按鈕.tMenu .link:last-child
+    選第二個按鈕.tMenu .link:nth-child(2)
+    選所有偶數按鈕.tMenu .link:nth-child(even)
+*/
+.tMenu .link:first-child{
+    margin-left: 20px; 
+}
+
+.userText{
+    float: right;
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    padding: 4px;
+    font-weight: bold;
+    vertical-align: middle;
+    color: #C7F2EC;
+    font-size: 13px;
+    text-decoration: none;
+    margin-right: 15px;
+}
+
+.imagestyle{
+    float: right;
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    padding: 3px;
+    font-weight: bold;
+    vertical-align: middle;
+    color: #C7F2EC;
+    font-size: 13px;
+    text-decoration: none;
+}
+
+
+
+/* 連結頁面樣式 */
+.tMenu .link {
+    float: left;
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    padding: 4px;
+    color: #FFFFFF;
+    font-size: 1rem;
+    text-decoration: none;
+    font-weight: bold;
+    margin-right: 20px; /* 取代 gap */
+    vertical-align: middle;
+    
+}
+
+/* 登出樣式 */
+.tMenu .solink {
+    float: right;
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    padding: 4px;
+    font-weight: bold;
+    vertical-align: middle;
+    color: #FDFFBD;
+    font-size: 13px;
+    text-decoration: none;
+    margin-right: 12px;
+}
+
+.tMenu .link:hover{
+  color:#91B395;
+}
+
+.tMenu .solink:hover{
+  color:#941022;
+}
+
+
+
+
+/*子頁面設計*/
+
+.subpContainer {
+    min-height: 0;         /* 允許 flex 壓縮，防止 overflow */
+    overflow: hidden;      /* 讓子頁面滾動條只在 iframe 內 */
+    border-radius: 8px ;
+    
+}
+
+/* iframe 本身 */
+.subpContainer iframe {
+    position: absolute;    /* 貼滿容器 */
+    top: 8%; 
+    left: 0;      
+    width: 100%;
+    height: 100%;        
+    border: none;
+    background: transparent;
+    
+}
+
+
+
+
+
+/* 限制瀏覽器 縮放大小 */
+*:first-child+html body {
+    width: expression(document.body.clientWidth < 520 ? "520px" : "auto");
+}

@@ -1,0 +1,5 @@
+E:\御芳\VS2010\GuestBook\GuestBook\bin\GuestBook.dll
+E:\御芳\VS2010\GuestBook\GuestBook\bin\GuestBook.pdb
+E:\御芳\VS2010\GuestBook\GuestBook\obj\Debug\GuestBook.dll
+E:\御芳\VS2010\GuestBook\GuestBook\obj\Debug\GuestBook.pdb
+E:\御芳\VS2010\GuestBook\GuestBook\obj\Debug\GuestBook.csprojResolveAssemblyReference.cache

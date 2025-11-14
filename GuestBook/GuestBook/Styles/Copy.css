@@ -1,0 +1,119 @@
+﻿html,
+body {
+    height: 100%;
+    /* 限制瀏覽器 縮放大小 ，配合first-child+html body*/
+    min-width: 620px;
+}
+
+.tMenu {
+    /* IE7 Color : this setting only for IE7*/
+    background: #488789;    
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#488789', endColorstr='#76B5B7', GradientType=0);
+    
+    
+    /* other  Browser Color*/
+    background: linear-gradient(180deg, #488789 0% ,#76B5B7 100%);
+    border-radius: 6px;
+    padding: 12px;
+    margin: 10px;
+    align-items: center;
+    
+    /*IE 7切版 讓他靠右*/
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    line-height: 20px;
+    
+    
+    /*間隔大小*/
+    display: flex;
+    gap: 20px;
+    
+    
+}
+.userText{
+    /*IE 7切版 讓他靠右*/
+    *float: right;
+    /* 關鍵：line-height 等於總高度 */
+    *line-height: 30px !important;  /* 強制垂直置中 */
+    
+    color:#CCFFEA;
+    font-weight: bold;
+    margin-right: 12px;
+}
+
+
+/* Home 離邊框距離 
+    選最後一個按鈕.tMenu .link:last-child
+    選第二個按鈕.tMenu .link:nth-child(2)
+    選所有偶數按鈕.tMenu .link:nth-child(even)
+*/
+.tMenu .link:first-child{
+    margin-left: 20px; 
+}
+
+
+
+body {
+    /*IE7 color*/
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#474747', endColorstr='#121A29', GradientType=0);
+  
+    /* other  Browser Color*/
+    background: linear-gradient(225deg, #474747 0%, #121A29 100%);
+    color:  #e6eef8;
+    
+    
+    /* 讓他坪鋪*/
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+   
+}
+
+/* 連結頁面樣式 */
+.tMenu .link {
+    padding: 4px;
+    background: transparent;
+    color: #FFFFFF;
+    font-size: 1rem;
+    text-decoration: none;
+    font-weight: bold;
+    
+    
+    /*IE 7切版 讓他靠右*/
+    *float: left;
+    *margin-right: 12px;
+    
+}
+
+.tMenu .link:hover{
+  color:#91B395;
+}
+
+
+/* 登出樣式 */
+.tMenu .solink {
+    display: flex;
+    margin-left: auto;
+    padding: 4px;
+    background: transparent;
+    color: #FDFFBD;
+    font-size: 13px;
+    text-decoration: none;
+    font-weight: bold;
+    
+        
+    /*IE 7切版 讓他靠右*/
+    *float: right;
+    *margin-right: 12px;
+}
+
+.tMenu .solink:hover{
+  color:#941022;
+}
+
+
+/* 限制瀏覽器 縮放大小 */
+*:first-child+html body {
+    width: expression(document.body.clientWidth < 520 ? "520px" : "auto");
+}
