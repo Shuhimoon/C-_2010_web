@@ -4,8 +4,8 @@
     left: 0; top: 0; right: 0; bottom: 0;
     background: rgba(0,0,0,0.5);
     display: none;
-    align-items: center;
-    justify-content: center;
+    align-items: center; /*對齊的位子*/
+    justify-content: center; 
     z-index: 1000;
 }
 .modal {
@@ -13,7 +13,7 @@
     border-radius: 6px;
     padding: 20px;
     width: 360px;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.3);  /*有陰影的方塊*/
 }
 .modal-header {font-weight: bold; margin-bottom: 10px; }
 .modal-footer {text-align: right; margin-top: 15px; }

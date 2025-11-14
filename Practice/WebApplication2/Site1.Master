@@ -16,7 +16,7 @@
             <a href="Day4.aspx">Day4</a>
         </div>
         
-        <!-- 內容區塊 -->
+        <!-- 顯示內容區塊 -->
         <asp:ContentPlaceHolder ID="MainContent" runat="server" />
     </form>
 </body>

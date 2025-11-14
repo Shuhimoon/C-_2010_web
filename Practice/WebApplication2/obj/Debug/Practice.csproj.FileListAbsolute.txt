@@ -6,3 +6,7 @@ C:\Users\user\Documents\Visual Studio 2010\Projects\Practice\WebApplication2\bin
 C:\Users\user\Documents\Visual Studio 2010\Projects\Practice\WebApplication2\bin\WebApplication2.pdb
 C:\Users\user\Documents\Visual Studio 2010\Projects\Practice\WebApplication2\obj\Debug\WebApplication2.dll
 C:\Users\user\Documents\Visual Studio 2010\Projects\Practice\WebApplication2\obj\Debug\WebApplication2.pdb
+E:\御芳\VS2010\Practice\WebApplication2\bin\WebApplication2.dll
+E:\御芳\VS2010\Practice\WebApplication2\bin\WebApplication2.pdb
+E:\御芳\VS2010\Practice\WebApplication2\obj\Debug\WebApplication2.dll
+E:\御芳\VS2010\Practice\WebApplication2\obj\Debug\WebApplication2.pdb
