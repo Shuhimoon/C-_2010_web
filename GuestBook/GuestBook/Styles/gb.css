@@ -45,7 +45,6 @@ h2 {
     justify-content: center;
     text-align: center;
     
-    
 }
 
 .title{
@@ -64,6 +63,49 @@ h2 {
     font-size: 1rem;
     min-width: 180px;
    
+}
+
+.cals{
+    height: 3%;
+    width: 3%;
+}
+
+.calsRow {
+    display: block; /* IE7 不支援 flex */
+    text-align: center;
+    margin-top: 12px;
+    overflow: hidden; /* 清除 float */
+    *zoom: 1; 
+}
+
+.cals-popup {
+    background: white;
+    width: 35%;
+    display: inline-block;
+    float: left; /* 改用 float 讓 IE7 支援水平排列 */
+    
+    
+    display: flex;
+    justify-content: center;
+}
+
+
+.cale-popup {
+    background: white;
+    width: 35%;
+    display: inline-block;
+    float: right; /* 改用 float 讓 IE7 支援水平排列 */
+    
+    
+    display: flex;
+    justify-content: center;
+}
+
+
+.reBox{
+    margin: 10px;
+    padding: 10px;
+    border-radius: 6px;
 }
 
 

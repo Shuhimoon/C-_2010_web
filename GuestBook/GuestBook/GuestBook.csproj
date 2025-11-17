@@ -51,6 +51,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="cals.png" />
     <Content Include="Default.aspx" />
     <Content Include="Home.aspx" />
     <Content Include="Page\GBD.aspx" />
@@ -62,7 +63,9 @@
     <Content Include="Styles\Site.css" />
     <Content Include="Styles\Default.css" />
     <Content Include="Styles\Copy.css" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>

@@ -18,7 +18,7 @@
                     <asp:TextBox ID="txtDD" CssClass="date" Enabled="false" runat="server"></asp:TextBox>
                 </div>
                 <br><br/>
-                <span class="title">Guest Book</span>
+                <span class="title">Guset Book</span>
                 <div class="TBoxRow">
                    <asp:TextBox ID="txtDGB" CssClass="inputGB" TextMode="MultiLine" Rows="20" Enabled="false" runat="server"></asp:TextBox>
                 </div>

@@ -9,13 +9,33 @@
 </head>
 <body>
     <form id="GBSPage" runat="server">
+    <asp:SqlDataSource ID="SqlDataCompany" runat="server" ConnectionString="<%$ ConnectionStrings:MyDB %>"
+                SelectCommand="SELECT * FROM GuestBook WHERE Title LIKE '%' + @Title + '%' AND CreateDate >= @start AND CreateDate < DATEADD(day,1,@end)">
+    </asp:SqlDataSource>
         <div class="Container">
             <h2>Query System</h2>     
             <div class="TBoxRow">
                 <span class="title">Title</span>
-                <asp:TextBox ID="txtSearch" CssClass="input" runat="server"></asp:TextBox>
+                <asp:TextBox ID="txtTitle" CssClass="input" runat="server"></asp:TextBox>
             </div>
+            <br/>
+            <div class="TBoxRow">
+                <span class="title">Start Date</span>
+                <asp:TextBox ID="txtSDate" CssClass="input" runat="server" Enabled="false" ></asp:TextBox>
+                <!-- 開始日期的日曆 -->
+                 <asp:ImageButton  ID="calSBt"  runat="server" ImageUrl="~/cals.png" AlternateText="calSBt"  CssClass="cals"  OnClick="CalSbtn_Click" />
 
+                <span class="title">End Date</span>
+                <asp:TextBox ID="txtEDate" CssClass="input" runat="server" Enabled="false" ></asp:TextBox>
+                <!-- 結束日期的日曆 -->
+                <asp:ImageButton  ID="calEBt"  runat="server" ImageUrl="~/cals.png" AlternateText="calEBt"  CssClass="cals"  OnClick="CalEbtn_Click" />
+            
+            </div>
+            <div class="calsRow">
+                 <asp:Calendar ID="calS" runat="server" OnSelectionChanged="calS_SelectionChanged" Visible="false" CssClass="cals-popup"></asp:Calendar>
+                <asp:Calendar ID="calE" runat="server" OnSelectionChanged="calE_SelectionChanged" Visible="false" CssClass="cale-popup"></asp:Calendar>
+            </div> 
+            <br/>
             <div class="BtRow">
                 <asp:Button ID="btnS" CssClass="btn" runat="server" Text="搜尋" OnClick="btnS_Click" />
                 <asp:Button ID="btnN" CssClass="btn" runat="server" Text="新增" Onclick="btnN_Click" />
@@ -24,9 +44,10 @@
 
             <!--顯示內容-->
             <br><br/>
-            
+            <asp:Literal ID="ltResult" runat="server"></asp:Literal>
 
         </div>
+
     </form>
 </body>
 </html>
