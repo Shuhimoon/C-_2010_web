@@ -18,7 +18,7 @@
 
         
         <asp:LinkButton ID="SingOut" CssClass="solink" runat="server" OnClick="lnksoPage_Click">[Sing Out]</asp:LinkButton>
-        <span class="userText">shuhi</span>
+        <span id="userName" class="userText" runat="server"></span>
         <img src="head.png" alt="image" class="imagestyle">
     </div>
 

@@ -157,6 +157,7 @@
     <Compile Include="Page2\GBU2.aspx.designer.cs">
       <DependentUpon>GBU2.aspx</DependentUpon>
     </Compile>
+    <Compile Include="sql.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

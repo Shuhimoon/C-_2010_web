@@ -14,16 +14,18 @@
             <div class="TBoxRow">
                 <!--span 不會換行-->
                 <span>帳號</span>
-                <asp:TextBox ID="AI" CssClass="input" runat="server"/>
+                <asp:TextBox ID="AcountInput" CssClass="input" runat="server"/>
             </div>
             <div class="TBoxRow">
                 <!--span 不會換行-->
                 <span>密碼</span>
-                <asp:TextBox ID="PWD" CssClass="input" runat="server"/>
+                <asp:TextBox ID="PWD" type="password" CssClass="input" runat="server"/>
             </div>
             <div class="BtRow">
                 <asp:Button ID="lgBt" CssClass="btn" runat="server" Text="登入" onclick="lgBt_Click"/>
             </div>
+
+            <asp:Literal ID="ltResult" runat="server" Visible="false" Text="123"></asp:Literal>
         </div>
     </form>
 </body>

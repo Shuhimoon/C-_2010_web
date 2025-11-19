@@ -11,7 +11,10 @@ namespace GuestBook
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["UserID"] == null)
+            {
+                Response.Redirect("~/Login.aspx"); // 沒登入就踢回去登入頁
+            }
         }
     }
 }

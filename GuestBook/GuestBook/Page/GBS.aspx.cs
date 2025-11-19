@@ -11,39 +11,47 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
 
+
+
 namespace GuestBook
 {
     public partial class GBS : System.Web.UI.Page
     {
         //建立連線字串
         private string ConnStr = ConfigurationManager.ConnectionStrings["MyDB"].ConnectionString;
-        private DataTable SearchGuestBook(DateTime start, DateTime end ,bool notitle)
+        private DataTable SearchGuestBook(DateTime start, DateTime end ,bool notitle,bool dtimecheck)
         {
             DataTable dt = new DataTable();
 
             string sql = "";
             string titleKeyword = string.IsNullOrWhiteSpace(txtTitle.Text) ? "" : txtTitle.Text.ToString();
 
+            //讀取login 是用哪個使用者登入的 ，使用繼承User.cs 去讀取Session["UserID"]
+            int userId = Convert.ToInt32(Session["UserID"]);
 
-
-            if (!string.IsNullOrEmpty(titleKeyword) && notitle == false)
+            
+            //有標題 沒日期
+            if (notitle == false && dtimecheck == true)
             {
                 sql = "SELECT * FROM GusetBook " +
-                      "WHERE Title LIKE @title";
+                      "WHERE Title LIKE @title" +
+                      " AND User_ID = @UserID";
                 
-            }
-            else if (!string.IsNullOrEmpty(titleKeyword) && notitle == true)
+            }//有標題 有日期
+            else if (notitle == false && dtimecheck == false)
             {
                 sql = "SELECT * FROM GusetBook " +
                         "WHERE CreateDate >= @start " +
-                        "AND CreateDate < DATEADD(day, 1, @end)" +
-                        "AND Title LIKE @title";
+                        " AND CreateDate < DATEADD(day, 1, @end)" +
+                        " AND Title LIKE @title" +
+                        " AND User_ID = @UserID";
             }
-            else
+            else//沒標題 沒日期 
             {
                 sql = "SELECT * FROM GusetBook " +
                         "WHERE CreateDate >= @start " +
-                        "AND CreateDate < DATEADD(day, 1, @end)";
+                        " AND CreateDate < DATEADD(day, 1, @end)" +
+                        " AND User_ID = @UserID";
             }
 
 
@@ -54,8 +62,8 @@ namespace GuestBook
                 conn.Open(); 
                 cmd.Parameters.AddWithValue("@start", start.Date);          
                 cmd.Parameters.AddWithValue("@end", end.Date);
-                if (!string.IsNullOrEmpty(titleKeyword))
-                    cmd.Parameters.AddWithValue("@title", "%" + titleKeyword + "%");
+                cmd.Parameters.AddWithValue("@title", "%" + titleKeyword + "%");
+                cmd.Parameters.AddWithValue("@UserID", userId);
 
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 da.Fill(dt);
@@ -65,44 +73,72 @@ namespace GuestBook
 
         protected void Page_Load(object sender, EventArgs e)
         {
-           
+            if (Session["UserID"] == null)
+            {
+                Response.Redirect("~/Login.aspx"); // 沒登入就踢回去登入頁
+            }
         }
 
 
         protected void btnS_Click(object sender, EventArgs e)
         {
             DateTime start, end;
-           
+            bool dtimecheck = false;
 
-            try
+
+
+            if (string.IsNullOrEmpty(txtSDate.Text))
             {
-                start = string.IsNullOrWhiteSpace(txtSDate.Text)
-                    ? DateTime.Today
-                    : DateTime.Parse(txtSDate.Text.Trim()).Date;
-             
-                end = string.IsNullOrEmpty(txtEDate.Text)
-                    ? start
-                    : DateTime.Parse(txtEDate.Text).Date;
+                start = DateTime.Today;
+                dtimecheck = true;
             }
-            catch
+            else
             {
-                ltResult.Text = "<div class='reBox' style='color:red;'>日期格式錯誤！</div>";
-                return;
+                start = DateTime.Parse(txtSDate.Text.Trim()).Date;
+                dtimecheck = false;
             }
 
-            // 3. 正確判斷：標題有沒有填
-            bool notitle = !string.IsNullOrWhiteSpace(txtTitle.Text);
+            if (string.IsNullOrEmpty(txtEDate.Text))
+            {
+                end = start;
+            }
+            else
+            {
+                if (dtimecheck == true)
+                {
+                    end = DateTime.Parse(txtEDate.Text).Date;
+                    start = end;
+                    dtimecheck = false;
+                }
+                else
+                    end = DateTime.Parse(txtEDate.Text).Date;
+            }
+
+            if (start > end)
+            {
+                DateTime temp = start;
+                start = end;
+                end = temp;
+            }
+
+            // 3. 正確判斷：標題有沒有 ， 有的話為true
+            bool notitle = string.IsNullOrWhiteSpace(txtTitle.Text);
 
             // 查詢
-            DataTable dt = SearchGuestBook(start, end, notitle);
+            DataTable dt = SearchGuestBook(start, end, notitle, dtimecheck);
             
             string html="";
+            
+            
+
             //判斷有沒有資料
             if (dt.Rows.Count == 0)
             {
-                //如果沒有資料顯示你查詢的區段
-                if (notitle) 
-                    html += "<div class='reBox'> Title : "+ txtTitle.Text + "<br/>" + start.ToString("yyyy/MM/dd") + " 00:00:00 ~ " + end.ToString("yyyy/MM/dd") + " 23:59:59 <br/>查無此日期項目</div>";
+                //有title ， 沒有 time
+                if (notitle == false && dtimecheck == true)
+                    html += "<div class='reBox'> Title : " + HttpUtility.HtmlEncode(txtTitle.Text.ToString()) + " 查無此日期項目</div>";
+                else if (notitle == false && dtimecheck == false) //有title ， 有 time
+                    html += "<div class='reBox'> Title : " + HttpUtility.HtmlEncode(txtTitle.Text.ToString()) + "<br/>" + start.ToString("yyyy/MM/dd") + " 00:00:00 ~ " + end.ToString("yyyy/MM/dd") + " 23:59:59 <br/>查無此日期項目</div>";
                 else
                     html += "<div class='reBox'> " + start.ToString("yyyy/MM/dd") + " 00:00:00 ~ " + end.ToString("yyyy/MM/dd") + " 23:59:59 <br/>查無此日期項目</div>";
                 
@@ -114,9 +150,9 @@ namespace GuestBook
                 {
                     html += "<div class='rebox'>";
                     html += "<b> | ID : " + row["ID"].ToString() + " | </b>";
-                    html += "<b> Title : " + row["Title"].ToString() + " | </b>";
-                    html += "<b> Date : " + Convert.ToDateTime(row["CreateDate"]).ToString("yyyy/MM/dd") + " | </b>";
-                    html += "<b>  GusetBook : " + row["GuestBook"].ToString() + " | </b>";
+                    html += "<b> Title : " + HttpUtility.HtmlEncode(row["Title"].ToString()) +" | </b>";
+                    html += "<b> Date : " + Convert.ToDateTime(row["CreateDate"]).ToString("yyyy/MM/dd") +" | </b>";
+                    html += "<b> GusetBook : " + HttpUtility.HtmlEncode(row["GuestBook"].ToString()) +" | </b>";
                     html += "<br/><br/></div>";
                 }
             }

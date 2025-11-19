@@ -21,6 +21,11 @@ namespace GuestBook
                 {
                     contentFrame.Attributes["src"] = "/Page/GBS.aspx";
                 }
+                
+                //顯示使用者名稱
+                userName.InnerText = Convert.ToString(Session["UserName"]);
+                 
+
             }
         }
 

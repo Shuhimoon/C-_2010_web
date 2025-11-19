@@ -13,10 +13,19 @@
             <h2>New Guset Book</h2>   
                 <div class="TBoxRow">
                     <span class="title">Title</span>
-                    <asp:TextBox ID="txtN" CssClass="input" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="txtNTitle" CssClass="input" runat="server" MaxLength="100" ></asp:TextBox>
                     <span class="title">Date</span>
-                    <asp:TextBox ID="txtND" CssClass="date" Enabled="false" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="txtCDate" CssClass="input" runat="server" Enabled="false" MaxLength="10" ></asp:TextBox>
+                    <!-- 開始日期的日曆 -->
+                     <asp:ImageButton  ID="calCBt"  runat="server" ImageUrl="~/cals.png" AlternateText="calCBt"  CssClass="cals"  OnClick="CalCbtn_Click" />
                 </div>
+
+                <!-- 顯示日曆 -->
+                <div class="calsRow">
+                     <asp:Calendar ID="calN" runat="server" OnSelectionChanged="calN_SelectionChanged" Visible="false" CssClass="cals-popup"></asp:Calendar>
+                </div> 
+
+
                 <br><br/>
                 <span class="title">Guset Book</span>
                 <div class="TBoxRow">

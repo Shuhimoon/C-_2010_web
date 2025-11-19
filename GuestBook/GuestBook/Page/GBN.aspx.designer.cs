@@ -22,22 +22,40 @@ namespace GuestBook.Styles {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// txtN 控制項。
+        /// txtNTitle 控制項。
         /// </summary>
         /// <remarks>
         /// 自動產生的欄位。
         /// 將移動欄位宣告從設計檔案修改為程式碼後置檔案。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtN;
+        protected global::System.Web.UI.WebControls.TextBox txtNTitle;
         
         /// <summary>
-        /// txtND 控制項。
+        /// txtCDate 控制項。
         /// </summary>
         /// <remarks>
         /// 自動產生的欄位。
         /// 將移動欄位宣告從設計檔案修改為程式碼後置檔案。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtND;
+        protected global::System.Web.UI.WebControls.TextBox txtCDate;
+        
+        /// <summary>
+        /// calCBt 控制項。
+        /// </summary>
+        /// <remarks>
+        /// 自動產生的欄位。
+        /// 將移動欄位宣告從設計檔案修改為程式碼後置檔案。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ImageButton calCBt;
+        
+        /// <summary>
+        /// calN 控制項。
+        /// </summary>
+        /// <remarks>
+        /// 自動產生的欄位。
+        /// 將移動欄位宣告從設計檔案修改為程式碼後置檔案。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Calendar calN;
         
         /// <summary>
         /// txtNGB 控制項。

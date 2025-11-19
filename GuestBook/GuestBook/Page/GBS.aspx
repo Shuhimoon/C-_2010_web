@@ -16,17 +16,17 @@
             <h2>Query System</h2>     
             <div class="TBoxRow">
                 <span class="title">Title</span>
-                <asp:TextBox ID="txtTitle" CssClass="input" runat="server"></asp:TextBox>
+                <asp:TextBox ID="txtTitle" CssClass="input" runat="server" MaxLength="100"></asp:TextBox>
             </div>
             <br/>
             <div class="TBoxRow">
                 <span class="title">Start Date</span>
-                <asp:TextBox ID="txtSDate" CssClass="input" runat="server" Enabled="false" ></asp:TextBox>
+                <asp:TextBox ID="txtSDate" CssClass="input" runat="server" Enabled="false" MaxLength="10" ></asp:TextBox>
                 <!-- 開始日期的日曆 -->
                  <asp:ImageButton  ID="calSBt"  runat="server" ImageUrl="~/cals.png" AlternateText="calSBt"  CssClass="cals"  OnClick="CalSbtn_Click" />
 
                 <span class="title">End Date</span>
-                <asp:TextBox ID="txtEDate" CssClass="input" runat="server" Enabled="false" ></asp:TextBox>
+                <asp:TextBox ID="txtEDate" CssClass="input" runat="server" Enabled="false" MaxLength="10"></asp:TextBox>
                 <!-- 結束日期的日曆 -->
                 <asp:ImageButton  ID="calEBt"  runat="server" ImageUrl="~/cals.png" AlternateText="calEBt"  CssClass="cals"  OnClick="CalEbtn_Click" />
             
@@ -35,7 +35,6 @@
                  <asp:Calendar ID="calS" runat="server" OnSelectionChanged="calS_SelectionChanged" Visible="false" CssClass="cals-popup"></asp:Calendar>
                 <asp:Calendar ID="calE" runat="server" OnSelectionChanged="calE_SelectionChanged" Visible="false" CssClass="cale-popup"></asp:Calendar>
             </div> 
-            <br/>
             <div class="BtRow">
                 <asp:Button ID="btnS" CssClass="btn" runat="server" Text="搜尋" OnClick="btnS_Click" />
                 <asp:Button ID="btnN" CssClass="btn" runat="server" Text="新增" Onclick="btnN_Click" />

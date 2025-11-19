@@ -22,13 +22,13 @@ namespace GuestBook {
         protected global::System.Web.UI.HtmlControls.HtmlForm lgPage;
         
         /// <summary>
-        /// AI 控制項。
+        /// AcountInput 控制項。
         /// </summary>
         /// <remarks>
         /// 自動產生的欄位。
         /// 將移動欄位宣告從設計檔案修改為程式碼後置檔案。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox AI;
+        protected global::System.Web.UI.WebControls.TextBox AcountInput;
         
         /// <summary>
         /// PWD 控制項。
@@ -47,5 +47,14 @@ namespace GuestBook {
         /// 將移動欄位宣告從設計檔案修改為程式碼後置檔案。
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button lgBt;
+        
+        /// <summary>
+        /// ltResult 控制項。
+        /// </summary>
+        /// <remarks>
+        /// 自動產生的欄位。
+        /// 將移動欄位宣告從設計檔案修改為程式碼後置檔案。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal ltResult;
     }
 }
