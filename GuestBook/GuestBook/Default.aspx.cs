@@ -25,7 +25,10 @@ namespace GuestBook
                 //顯示使用者名稱
                 userName.InnerText = Convert.ToString(Session["UserName"]);
                  
-
+                if (Session["UserID"] == null)
+                {
+                    Response.Redirect("~/Login.aspx"); // 沒登入就踢回去登入頁
+                }
             }
         }
 
@@ -45,4 +48,5 @@ namespace GuestBook
         }
 
     }
+
 }
