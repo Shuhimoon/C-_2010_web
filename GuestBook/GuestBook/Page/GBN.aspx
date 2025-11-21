@@ -33,9 +33,36 @@
                 </div>
 
                 <div class="BtRow">
-                    <asp:Button ID="btnC" CssClass="btn" runat="server" Text="確認新增" Onclick="btnC_Click" />
+                    <asp:Button ID="btnC" CssClass="btn" runat="server" Text="確認新增" OnClientClick="showBox(); return false;" />
                     <asp:Button ID="btnB" CssClass="btn" runat="server" Text="返回" Onclick="btnB_Click" />
                 </div>
+
+                <!-- 刪除確認Box -->
+                 <div ID="deleteOverlay">
+                        <div ID="deleteOverlay-box">
+                            <h3>確認刪除</h3>
+                            <p>確定要刪除這筆資料嗎？此動作無法復原！</p>
+        
+                            <!-- 隱藏的真刪除按鈕（會真正觸發後端刪除） -->
+                            <asp:Button ID="btnCreateConfirm" runat="server" Text="確認新增" CssClass="btn" OnClick="btnCreateConfirm_Click" UseSubmitBehavior="false" />
+                            <button type="button" class="btn" onclick="hideBox()">取消</button>
+                        </div>
+                </div>
+                <script type="text/javascript">
+                    function showBox() {
+                        document.getElementById('deleteOverlay').style.display = 'block';
+                    }
+                    function hideBox() {
+                        document.getElementById('deleteOverlay').style.display = 'none';
+                    }
+
+                    // 如果使用者按了 ESC 鍵也關閉 ， IE7 不能用先關掉
+                    //document.onkeydown = function (e) {
+                    //    if (e.key === "Escape") hideDeleteBox();
+                    //};
+                </script>
+
+
         </div>
     </form>
 </body>

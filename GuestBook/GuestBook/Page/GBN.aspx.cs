@@ -20,9 +20,9 @@ namespace GuestBook.Styles
         private string ConnStr = ConfigurationManager.ConnectionStrings["MyDB"].ConnectionString;
         private void CreateGuestBook(string title,string gbook)
         {
-            DataTable dt = new DataTable();
+           
 
-            //讀取login 是用哪個使用者登入的 ，使用繼承User.cs 去讀取Session["UserID"]
+            //讀取login 是用哪個使用者登入的 ，去讀取Session["UserID"]
             int userId = Convert.ToInt32(Session["UserID"]);
             
             string sql = @"
@@ -62,7 +62,7 @@ namespace GuestBook.Styles
         {
             if (!IsPostBack)   // 避免重新整理又重跑
             {
-                txtCDate.Text = DateTime.Now.ToString("yyyy/MM/dd  HH:mm:ss");
+                txtCDate.Text = DateTime.Now.ToString("yyyy/MM/dd");
                 
                 if (Session["UserID"] == null)
                 {
@@ -71,7 +71,7 @@ namespace GuestBook.Styles
             }
         }
 
-        protected void btnC_Click(object sender, EventArgs e)
+        protected void btnCreateConfirm_Click(object sender, EventArgs e)
         {
             DateTime start = Convert.ToDateTime(txtCDate.Text);
 
@@ -82,24 +82,22 @@ namespace GuestBook.Styles
                 ShowAlert("請輸入標題！");
                 return;
             }
-
-            try
+            else
             {
-                CreateGuestBook(txtNTitle.Text, txtNGB.Text);
+                try
+                {
+                    CreateGuestBook(txtNTitle.Text, txtNGB.Text);
 
-                ShowAlert("留言成功！");
-                // 可選：清空輸入欄位
-                txtNTitle.Text = "";
-                txtNGB.Text = "";
-                txtCDate.Text = DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss");
+                    // 清空輸入欄位
+                    txtNTitle.Text = "";
+                    txtNGB.Text = "";
+                    txtCDate.Text = DateTime.Now.ToString("yyyy/MM/dd");
+                }
+                catch (Exception ex)
+                {
+                    ShowAlert("留言失敗！\\n錯誤：" + ex.Message.Replace("'", ""));
+                }
             }
-            catch (Exception ex)
-            {
-                ShowAlert("留言失敗！\\n錯誤：" + ex.Message.Replace("'", ""));
-            }
-
-            
-
 
         }
 

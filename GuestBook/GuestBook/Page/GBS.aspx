@@ -41,12 +41,14 @@
                 <asp:Button ID="btnU" CssClass="btn" runat="server" Text="修改" Onclick="btnU_Click" />
             </div>
 
+           
+            
             <!--顯示內容-->
             <br><br/>
             <asp:Literal ID="ltResult" runat="server"></asp:Literal>
 
         </div>
-
+           
     </form>
 </body>
 </html>

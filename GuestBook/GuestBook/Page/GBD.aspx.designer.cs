@@ -31,6 +31,15 @@ namespace GuestBook {
         protected global::System.Web.UI.WebControls.TextBox txtD;
         
         /// <summary>
+        /// txtCD 控制項。
+        /// </summary>
+        /// <remarks>
+        /// 自動產生的欄位。
+        /// 將移動欄位宣告從設計檔案修改為程式碼後置檔案。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtCD;
+        
+        /// <summary>
         /// txtDD 控制項。
         /// </summary>
         /// <remarks>
@@ -65,5 +74,14 @@ namespace GuestBook {
         /// 將移動欄位宣告從設計檔案修改為程式碼後置檔案。
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnB;
+        
+        /// <summary>
+        /// btnDeleteConfirm 控制項。
+        /// </summary>
+        /// <remarks>
+        /// 自動產生的欄位。
+        /// 將移動欄位宣告從設計檔案修改為程式碼後置檔案。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnDeleteConfirm;
     }
 }

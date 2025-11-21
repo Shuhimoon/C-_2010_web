@@ -10,13 +10,13 @@
 <body>
     <form id="form1" runat="server">
         <div class="Container">
-            <h2>Revise Guest Book</h2>   
-                <div class="TBoxRow">
+            <h2>Revise Guest Book</h2> 
                     <span class="title">Title</span>
-                    <asp:TextBox ID="txtR" CssClass="input" runat="server"></asp:TextBox>
-                    <span class="title">Update</span>
-                    <asp:TextBox ID="txtRD" CssClass="date" Enabled="false" runat="server"></asp:TextBox>
-                </div>
+                    <asp:TextBox ID="txtR" CssClass="input" runat="server"></asp:TextBox><br><br/>
+                    <span class="title">更新日期</span>
+                    <asp:TextBox ID="txtUR" CssClass="input" Enabled="false" runat="server"></asp:TextBox>
+
+
                 <br><br/>
                 <span class="title">Guest Book</span>
                 <div class="TBoxRow">
@@ -24,9 +24,35 @@
                 </div>
 
                 <div class="BtRow">
-                    <asp:Button ID="btnR" CssClass="btn" runat="server" Text="確認修改" Onclick="btnR_Click" />
+                    <asp:Button ID="btnR" CssClass="btn" runat="server" Text="確認修改" OnClientClick="showBox(); return false;" />
                     <asp:Button ID="btnB" CssClass="btn" runat="server" Text="返回" Onclick="btnB_Click" />
                 </div>
+
+                 <!-- 刪除確認Box -->
+                 <div ID="deleteOverlay">
+                        <div ID="deleteOverlay-box">
+                            <h3>確認修改</h3>
+                            <p>確定要修改這筆資料嗎？此動作無法復原！</p>
+        
+                            <!-- 隱藏的真刪除按鈕（會真正觸發後端刪除） -->
+                            <asp:Button ID="btnUpdateConfirm" runat="server" Text="確認修改" CssClass="btn" OnClick="btnUpdateConfirm_Click" UseSubmitBehavior="false" />
+                            <button type="button" class="btn" onclick="hideBox()">取消</button>
+                        </div>
+                </div>
+                <script type="text/javascript">
+                    function showBox() {
+                        document.getElementById('deleteOverlay').style.display = 'block';
+                    }
+                    function hideBox() {
+                        document.getElementById('deleteOverlay').style.display = 'none';
+                    }
+
+                    // 如果使用者按了 ESC 鍵也關閉 ， IE7 不能用先關掉
+                    //document.onkeydown = function (e) {
+                    //    if (e.key === "Escape") hideDeleteBox();
+                    //};
+                </script>
+
         </div>
     </form>
 </body>

@@ -1,0 +1,4 @@
+E:\御芳\VS2010\airplan\airplan\bin\airplan.dll
+E:\御芳\VS2010\airplan\airplan\bin\airplan.pdb
+E:\御芳\VS2010\airplan\airplan\obj\Debug\airplan.dll
+E:\御芳\VS2010\airplan\airplan\obj\Debug\airplan.pdb

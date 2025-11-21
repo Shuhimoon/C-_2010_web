@@ -26,7 +26,7 @@ namespace GuestBook
             string sql = "";
             string titleKeyword = string.IsNullOrWhiteSpace(txtTitle.Text) ? "" : txtTitle.Text.ToString();
 
-            //讀取login 是用哪個使用者登入的 ，使用繼承User.cs 去讀取Session["UserID"]
+            //讀取login 是用哪個使用者登入的 ，去讀取Session["UserID"]
             int userId = Convert.ToInt32(Session["UserID"]);
 
             
@@ -85,8 +85,6 @@ namespace GuestBook
             DateTime start, end;
             bool dtimecheck = false;
 
-
-
             if (string.IsNullOrEmpty(txtSDate.Text))
             {
                 start = DateTime.Today;
@@ -129,7 +127,6 @@ namespace GuestBook
             
             string html="";
             
-            
 
             //判斷有沒有資料
             if (dt.Rows.Count == 0)
@@ -148,9 +145,10 @@ namespace GuestBook
                 //foreach 顯示結果
                 foreach (DataRow row in dt.Rows)
                 {
+                    
                     html += "<div class='rebox'>";
-                    html += "<b> | ID : " + row["ID"].ToString() + " | </b>";
-                    html += "<b> Title : " + HttpUtility.HtmlEncode(row["Title"].ToString()) +" | </b>";
+                    html += "<b> | ID : <a href='/Page/GBD.aspx?itemID=" + row["ID"].ToString() + "'>" + row["ID"].ToString() + "</a> | </b>"; 
+                    html += "<b> Title : " + HttpUtility.HtmlEncode(row["Title"].ToString()) + " | </b>";
                     html += "<b> Date : " + Convert.ToDateTime(row["CreateDate"]).ToString("yyyy/MM/dd") +" | </b>";
                     html += "<b> GusetBook : " + HttpUtility.HtmlEncode(row["GuestBook"].ToString()) +" | </b>";
                     html += "<br/><br/></div>";
@@ -168,7 +166,84 @@ namespace GuestBook
 
         protected void btnU_Click(object sender, EventArgs e)
         {
-            Response.Redirect("/Page/GBU.aspx");
+            DateTime start, end;
+            bool dtimecheck = false;
+
+
+
+            if (string.IsNullOrEmpty(txtSDate.Text))
+            {
+                start = DateTime.Today;
+                dtimecheck = true;
+            }
+            else
+            {
+                start = DateTime.Parse(txtSDate.Text.Trim()).Date;
+                dtimecheck = false;
+            }
+
+            if (string.IsNullOrEmpty(txtEDate.Text))
+            {
+                end = start;
+            }
+            else
+            {
+                if (dtimecheck == true)
+                {
+                    end = DateTime.Parse(txtEDate.Text).Date;
+                    start = end;
+                    dtimecheck = false;
+                }
+                else
+                    end = DateTime.Parse(txtEDate.Text).Date;
+            }
+
+            if (start > end)
+            {
+                DateTime temp = start;
+                start = end;
+                end = temp;
+            }
+
+            // 3. 正確判斷：標題有沒有 ， 有的話為true
+            bool notitle = string.IsNullOrWhiteSpace(txtTitle.Text);
+
+            // 查詢
+            DataTable dt = SearchGuestBook(start, end, notitle, dtimecheck);
+
+            string html = "";
+
+
+
+            //判斷有沒有資料
+            if (dt.Rows.Count == 0)
+            {
+                //有title ， 沒有 time
+                if (notitle == false && dtimecheck == true)
+                    html += "<div class='reBox'> Title : " + HttpUtility.HtmlEncode(txtTitle.Text.ToString()) + " 查無此日期項目</div>";
+                else if (notitle == false && dtimecheck == false) //有title ， 有 time
+                    html += "<div class='reBox'> Title : " + HttpUtility.HtmlEncode(txtTitle.Text.ToString()) + "<br/>" + start.ToString("yyyy/MM/dd") + " 00:00:00 ~ " + end.ToString("yyyy/MM/dd") + " 23:59:59 <br/>查無此日期項目</div>";
+                else
+                    html += "<div class='reBox'> " + start.ToString("yyyy/MM/dd") + " 00:00:00 ~ " + end.ToString("yyyy/MM/dd") + " 23:59:59 <br/>查無此日期項目</div>";
+
+            }
+            else
+            {
+                //foreach 顯示結果
+                foreach (DataRow row in dt.Rows)
+                {
+
+                    html += "<div class='rebox'>";
+                    html += "<b> | ID : <a href='/Page/GBU.aspx?itemID=" + row["ID"].ToString() + "'>" + row["ID"].ToString() + "</a> | </b>";
+                    html += "<b> Title : " + HttpUtility.HtmlEncode(row["Title"].ToString()) + " | </b>";
+                    html += "<b> Date : " + Convert.ToDateTime(row["CreateDate"]).ToString("yyyy/MM/dd") + " | </b>";
+                    html += "<b> GusetBook : " + HttpUtility.HtmlEncode(row["GuestBook"].ToString()) + " | </b>";
+                    html += "<br/><br/></div>";
+                }
+            }
+
+            //輸出至前端
+            ltResult.Text = html;
         }
 
         
@@ -210,7 +285,12 @@ namespace GuestBook
 
         }
 
-        
+        protected void btnDeleteConfirm_Click(object sender, EventArgs e)
+        {
+
+        }
+
+             
 
 
     }
