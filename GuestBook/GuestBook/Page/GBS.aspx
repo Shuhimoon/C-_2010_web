@@ -9,9 +9,6 @@
 </head>
 <body>
     <form id="GBSPage" runat="server">
-    <asp:SqlDataSource ID="SqlDataCompany" runat="server" ConnectionString="<%$ ConnectionStrings:MyDB %>"
-                SelectCommand="SELECT * FROM GuestBook WHERE Title LIKE '%' + @Title + '%' AND CreateDate >= @start AND CreateDate < DATEADD(day,1,@end)">
-    </asp:SqlDataSource>
         <div class="Container">
             <h2>Query System</h2>     
             <div class="TBoxRow">
@@ -52,3 +49,4 @@
     </form>
 </body>
 </html>
+
