@@ -1,0 +1,101 @@
+﻿html,body{
+    width: auto;
+    height:100%;
+    margin: 0;
+    padding: 0;
+    /*禁止滾動條*/
+    overflow: hidden;
+}  
+body {
+    /*由左到右漸成變色*/
+    
+    background: linear-gradient(270deg,#FFCCE6,#D6B0FF);
+}
+
+h1{
+    /*絕對定位 非 static 容器 會參考頁面逕行絕對定位*/
+    position: absolute;
+    top: 92%;
+    left: 85%;
+    margin: 20px;
+    color: #F3D7FA;
+}
+
+.bk{
+    /*絕對定位 非 static 容器 會參考頁面逕行絕對定位*/
+    position: absolute;
+    top: calc(92% + 4px);
+    left: calc(85% + 4px);
+    margin: 20px;
+    color: rgba(129, 90, 143, 0.2);
+}
+
+.listContainer{
+    text-align:center;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 14%;
+    height: 98%;
+    background: linear-gradient(180deg,#ECA8FF,#FFCCEF);
+    border-radius: 20px;
+    border: 2px solid rgba(248 ,222 ,255 , 0.5);
+}
+
+/*設定嵌入式頁面大小 iframe不會繼承class所以要用ID
+繼承*/
+#subPage{
+    position: absolute;
+    top: 10px;
+    left: 15%;
+    width: 90%;
+    height: 98%;
+    
+}
+
+
+.linkBtn{
+    color: #FAE3FF;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.linkBtn:hover{
+    color: #D1F7FF;
+    font-size: 21px;
+}
+    
+hr{
+    margin: 30px;
+    color: #FFFFFF;
+    border: 1px solid;
+} 
+
+h3{
+    color: #FFE8FE;
+    margin-top: 30px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
