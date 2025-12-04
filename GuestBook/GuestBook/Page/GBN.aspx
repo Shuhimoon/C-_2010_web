@@ -40,8 +40,8 @@
                 <!-- 刪除確認Box -->
                  <div ID="deleteOverlay">
                         <div ID="deleteOverlay-box">
-                            <h3>確認刪除</h3>
-                            <p>確定要刪除這筆資料嗎？此動作無法復原！</p>
+                            <h3>確認新增</h3>
+                            <p>確定要新增這筆資料嗎？此動作無法復原！</p>
         
                             <!-- 隱藏的真刪除按鈕（會真正觸發後端刪除） -->
                             <asp:Button ID="btnCreateConfirm" runat="server" Text="確認新增" CssClass="btn" OnClick="btnCreateConfirm_Click" UseSubmitBehavior="false" />

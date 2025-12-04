@@ -32,12 +32,5 @@
         </iframe>
     </div>
     </form>
-
-    <script type="text/javascript">
-        function loadPage(url) {
-            document.getElementById('contentFrame').src = url;
-        }
-        
-    </script>
 </body>
 </html>

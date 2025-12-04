@@ -56,7 +56,7 @@ namespace GuestBook
             {
                 AcountInput.Text = "";
                 PWD.Text = "";
-                ltResult.Text = "";
+                
                 Response.Cache.SetCacheability(HttpCacheability.NoCache);
                 Response.Cache.SetNoStore();
             }

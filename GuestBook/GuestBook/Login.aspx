@@ -25,7 +25,7 @@
                 <asp:Button ID="lgBt" CssClass="btn" runat="server" Text="登入" onclick="lgBt_Click"/>
             </div>
 
-            <asp:Literal ID="ltResult" runat="server" Visible="false" Text="123"></asp:Literal>
+            
         </div>
     </form>
 </body>
