@@ -30,7 +30,7 @@
             <!-- UseSubmitBehavior="false" 添加這個會沒辦法點選enter -->
             <div class="ContainerBtn">
                 <asp:Button ID="ReviseButton" CssClass="btn" runat="server" Text="Confirm" OnClick="ReviseButton_Click" /><br/>
-                <asp:Label ID="lblMessage" Visible="false" runat="server"></asp:Label>
+                <asp:Label ID="lblMessage" Visible="true" runat="server"></asp:Label>
             </div>
         </div>
 

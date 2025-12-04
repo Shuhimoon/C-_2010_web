@@ -56,17 +56,16 @@ namespace MyWorkWebsite
         {
             try {
                 //不小心用到保留字眼
-                string query = "select * From [User] Where UserName=@name and Pwd=@pwd";
+                string query = "select * From [User] Where UserName=@name";
 
                 string pwdhash = BCryptHelper.HashPassword(pwdInput.Text.Trim());
 
-                lblMessage.Text = pwdhash;
                 //設定查詢參數
                 SqlParameter[] parameters = new SqlParameter[]
                 {
                     new SqlParameter("@name" , AccontInput.Text.Trim()),
                     //new SqlParameter("@pwd" , pwdInput.Text.Trim())
-                    new SqlParameter("@pwd" , pwdhash)
+                    new SqlParameter("@password" , pwdhash)
                 };
 
                 DataTable result = Sql.ExecuteQuery(query, parameters);
@@ -76,20 +75,33 @@ namespace MyWorkWebsite
                     
                     Session["UserName"] = AccontInput.Text.Trim();
                     Session["PwdStateCheck"] = Convert.ToInt32(result.Rows[0]["changePWD"]);
-                    if (Convert.ToInt32(result.Rows[0]["changePWD"]) == 1)
+                    
+                    //登入邏輯
+                    if (result.Rows[0]["Pwd"].ToString() == pwdhash && Convert.ToInt32(result.Rows[0]["changePWD"]) == 1)
                     {
                         Response.Redirect("List.aspx");
                     }
-                    else
+                    else if (result.Rows[0]["Pwd"].ToString() == "0000" && Convert.ToInt32(result.Rows[0]["changePWD"]) == 0)
                     {
                         Response.Redirect("PwdPage.aspx");
+                    }
+                    else
+                    {
+                        showMessenger.InnerText = "Your Password mistake !"; 
+                        errorbox.Style["display"] = "block";
+                        AccontInput.Text = "";
+                        pwdInput.Text = "";
+
+                        Session["UserName"] = null;
+                        Session["PwdStateCheck"] = null;
                     }
                     
 
                 }
                 else
                 {
-                    errorbox.Style["display"] = "block";
+                    showMessenger.InnerText = "There is no password for this account !";
+                    errorbox.Style["display"] = "block"; 
                 }
                 
             }

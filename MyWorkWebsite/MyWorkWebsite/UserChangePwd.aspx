@@ -14,7 +14,7 @@
         <span class="title">Name :</span>
         <asp:TextBox id="nameSelect" CssClass="input" runat="server" MaxLength="25" ></asp:TextBox>
         <asp:Button id="selectBtn" Text="select" CssClass="btn" OnClick="selectBtn_Click" UseSubmitBehavior="true" runat="server" />
-        <asp:Label ID="lblMessage" Visible="false" runat="server"></asp:Label>
+        <asp:Label ID="lblMessage" Visible="true" runat="server"></asp:Label>
     </div>
 
     <!-- 確認Box -->

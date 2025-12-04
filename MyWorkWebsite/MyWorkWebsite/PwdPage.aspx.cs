@@ -74,9 +74,10 @@ namespace MyWorkWebsite {
                     Response.Redirect("Login.aspx"); 
                 } 
                 else 
-                { 
+                {   
                     showMessenger.InnerText = "Modification failed, the user cannot be found ~"; 
-                    errorbox.Style["display"] = "block"; } 
+                    errorbox.Style["display"] = "block"; 
+                } 
             } 
             catch (Exception ex) 
             { 

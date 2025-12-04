@@ -32,7 +32,7 @@
          <!-- 確認Box -->
          <div class="confirmbox" id="errorbox" runat="server">
             <div class="checkboxsub">
-                <p> Your Account or Password mistake !</p>
+                <p id="showMessenger" runat="server"></p>
                 <asp:Button ID="checkBtn" Text="關閉" CssClass="btn" OnClick="checkBoxBtn_Click" UseSubmitBehavior="false" runat="server"/>
             </div>
          </div>
