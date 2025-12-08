@@ -19,10 +19,10 @@
                 <asp:TextBox ID="AccontInput" CssClass="input" Enabled="false" autocomplete="off" runat="server"></asp:TextBox>
                 
                 <span>New Password：</span>
-                <asp:TextBox ID="pwdInput" type="password" CssClass="input" runat="server"></asp:TextBox>
+                <asp:TextBox ID="pwdInput" type="text" CssClass="input" runat="server"></asp:TextBox>
 
                 <span>Confirm Password：</span>
-                <asp:TextBox ID="confirmPwdInput" type="password" CssClass="input" 
+                <asp:TextBox ID="confirmPwdInput" type="text" CssClass="input" 
                     runat="server"></asp:TextBox>
 
             </div>

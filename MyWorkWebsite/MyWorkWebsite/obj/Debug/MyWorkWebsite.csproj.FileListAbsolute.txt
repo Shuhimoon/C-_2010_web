@@ -3,3 +3,8 @@ E:\御芳\VS2010\MyWorkWebsite\MyWorkWebsite\bin\MyWorkWebsite.pdb
 E:\御芳\VS2010\MyWorkWebsite\MyWorkWebsite\obj\Debug\MyWorkWebsite.dll
 E:\御芳\VS2010\MyWorkWebsite\MyWorkWebsite\obj\Debug\MyWorkWebsite.pdb
 E:\御芳\VS2010\MyWorkWebsite\MyWorkWebsite\obj\Debug\MyWorkWebsite.csprojResolveAssemblyReference.cache
+E:\御芳\github\C-_2010_web\MyWorkWebsite\MyWorkWebsite\bin\MyWorkWebsite.dll
+E:\御芳\github\C-_2010_web\MyWorkWebsite\MyWorkWebsite\bin\MyWorkWebsite.pdb
+E:\御芳\github\C-_2010_web\MyWorkWebsite\MyWorkWebsite\obj\Debug\MyWorkWebsite.csprojResolveAssemblyReference.cache
+E:\御芳\github\C-_2010_web\MyWorkWebsite\MyWorkWebsite\obj\Debug\MyWorkWebsite.dll
+E:\御芳\github\C-_2010_web\MyWorkWebsite\MyWorkWebsite\obj\Debug\MyWorkWebsite.pdb

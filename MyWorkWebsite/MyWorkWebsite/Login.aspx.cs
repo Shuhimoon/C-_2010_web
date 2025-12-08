@@ -25,6 +25,7 @@ namespace MyWorkWebsite
                 if (Session.IsNewSession)
                 {
                     Session["UserName"] = null;  // 明確設為 null
+                    Session["count"] = null;
                 }
                 else
                 {
@@ -44,17 +45,20 @@ namespace MyWorkWebsite
                 Response.Cache.SetNoStore();
                 
             }
-            if (Session["UserName"] != null)
-            {
-                Response.Redirect("List.aspx");
-                return;
-            }
             
         }
 
         protected void lgButton_Click(object sender, EventArgs e)
         {
             try {
+                //帳號密碼錯誤處理，錯誤三次以上封鎖
+                int count = 0; 
+                if (Session["count"] != null)
+                {
+                    count = Convert.ToInt32(Session["count"]);
+                }
+
+
                 //不小心用到保留字眼
                 string query = "select * From [User] Where UserName=@name";
 
@@ -75,19 +79,11 @@ namespace MyWorkWebsite
                     
                     Session["UserName"] = AccontInput.Text.Trim();
                     Session["PwdStateCheck"] = Convert.ToInt32(result.Rows[0]["changePWD"]);
-                    
+
                     //登入邏輯
-                    if (result.Rows[0]["Pwd"].ToString() == pwdhash && Convert.ToInt32(result.Rows[0]["changePWD"]) == 1)
+                    if (Convert.ToInt32(result.Rows[0]["Enable"]) == 0)
                     {
-                        Response.Redirect("List.aspx");
-                    }
-                    else if (result.Rows[0]["Pwd"].ToString() == "0000" && Convert.ToInt32(result.Rows[0]["changePWD"]) == 0)
-                    {
-                        Response.Redirect("PwdPage.aspx");
-                    }
-                    else
-                    {
-                        showMessenger.InnerText = "Your Password mistake !"; 
+                        showMessenger.InnerText = "Your account is blocked ， Please contact your system administrator!!!";
                         errorbox.Style["display"] = "block";
                         AccontInput.Text = "";
                         pwdInput.Text = "";
@@ -95,8 +91,48 @@ namespace MyWorkWebsite
                         Session["UserName"] = null;
                         Session["PwdStateCheck"] = null;
                     }
-                    
+                    else
+                    {
+                        if (result.Rows[0]["Pwd"].ToString() == pwdhash && Convert.ToInt32(result.Rows[0]["changePWD"]) == 1)
+                        {
+                            Response.Redirect("List.aspx");
+                            Session["count"] = null;
+                        }
+                        else if (result.Rows[0]["Pwd"].ToString() == pwdInput.Text.Trim() && Convert.ToInt32(result.Rows[0]["changePWD"]) == 0)
+                        {
+                            Response.Redirect("PwdPage.aspx");
+                            Session["count"] = null;
+                        }
+                        else
+                        {
+                            count++;
+                            Session["count"]= count;
+                            lblMessage.Text = Convert.ToString(Session["count"]);
+                            if (Convert.ToInt32(Session["count"]) >= 3)
+                            {
+                                string disable = "UPDATE [User] Set Enable = 0 WHERE UserName = @name";
 
+                                SqlParameter[] disableparameters = new SqlParameter[]
+                                {
+                                    new SqlParameter("@name", AccontInput.Text.Trim())
+                                };
+
+                                Sql.ExecuteNonQuery(disable, disableparameters);
+
+                                showMessenger.InnerText = "Account has been locked due to incorrect password three times !";
+                                errorbox.Style["display"] = "block";
+                                
+                            }
+                            else
+                            {
+                                showMessenger.InnerText = "Your Password mistake !";
+                                errorbox.Style["display"] = "block";
+                                
+                            }
+                            
+                        }
+                    }
+                    
                 }
                 else
                 {
@@ -118,7 +154,8 @@ namespace MyWorkWebsite
             AccontInput.Text = "";
             pwdInput.Text = "";
             errorbox.Style["display"] = "none";
-            Response.Redirect("Login.aspx");
+            Session["UserName"] = null;
+            Session["PwdStateCheck"] = null;
         }
     }
 }
