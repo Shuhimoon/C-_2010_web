@@ -150,10 +150,26 @@ h3{
 
 
 
+/*Logout image*/
+.lgBtn{
+    position: absolute;
+    top:  93%;
+    left: 75%;
+    background-image: url(logout.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    border: none; /* 移除邊框 */
+    width: 60px;
+    height: 60px;
+    
+    
+    
+}
 
+.lgBtn:hover{
+    background-image: url(logout2.png);
 
-
-
+}
 
 
 

@@ -40,6 +40,15 @@ namespace MyWorkWebsite {
         protected global::System.Web.UI.WebControls.LinkButton UserPage;
         
         /// <summary>
+        /// logout 控制項。
+        /// </summary>
+        /// <remarks>
+        /// 自動產生的欄位。
+        /// 將移動欄位宣告從設計檔案修改為程式碼後置檔案。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton logout;
+        
+        /// <summary>
         /// subPage 控制項。
         /// </summary>
         /// <remarks>

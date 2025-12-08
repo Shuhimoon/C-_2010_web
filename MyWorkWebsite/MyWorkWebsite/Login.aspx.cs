@@ -107,7 +107,8 @@ namespace MyWorkWebsite
                         {
                             count++;
                             Session["count"]= count;
-                            lblMessage.Text = Convert.ToString(Session["count"]);
+                            //DeBug用
+                            //lblMessage.Text = Convert.ToString(Session["count"]);
                             if (Convert.ToInt32(Session["count"]) >= 3)
                             {
                                 string disable = "UPDATE [User] Set Enable = 0 WHERE UserName = @name";

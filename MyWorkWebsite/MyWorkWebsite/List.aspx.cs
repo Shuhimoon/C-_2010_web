@@ -36,5 +36,11 @@ namespace MyWorkWebsite
         {
             Response.Redirect("List.aspx?page=user");
         }
+        protected void logoutPage_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Login.aspx");
+            Session["UserName"] = null;
+        }
+
     }
 }

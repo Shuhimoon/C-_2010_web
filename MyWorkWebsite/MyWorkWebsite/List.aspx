@@ -18,6 +18,7 @@
             <hr/>
             <asp:LinkButton ID="HomePage" CssClass="linkBtn" OnClick="lnkHPage_Click" runat="server">Home</asp:LinkButton><br/><br/>
             <asp:LinkButton ID="UserPage" CssClass="linkBtn" OnClick="lnkUserPage_Click" runat="server">User</asp:LinkButton> 
+            <asp:LinkButton ID="logout" CssClass="lgBtn" OnClick="logoutPage_Click" runat="server"></asp:LinkButton> 
         </div>
         
         <div class="subConainer">

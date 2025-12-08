@@ -59,6 +59,8 @@
     <Content Include="PwdPage.aspx" />
     <Content Include="Styles\Login.css" />
     <Content Include="Styles\Default.css" />
+    <Content Include="Styles\logout.png" />
+    <Content Include="Styles\logout2.png" />
     <Content Include="Styles\SubPage.css" />
     <Content Include="Styles\bg.jpg" />
     <Content Include="UserChangePwd.aspx" />
