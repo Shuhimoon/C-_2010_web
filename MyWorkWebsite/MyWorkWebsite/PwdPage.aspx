@@ -6,6 +6,7 @@
 <head runat="server">
     <title>PWD</title>
     <link href="Styles/Default.css" rel="Stylesheet"/>
+    <link rel="icon" type="image/x-icon" href="Styles/cat.png" />
     <!--[if IE]><link href="IE_Styles/IEDefault.css" type="text/css" rel="Stylesheet"/><![endif]-->
 </head>
 <body>

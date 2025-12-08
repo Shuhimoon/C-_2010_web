@@ -57,12 +57,15 @@
     <Content Include="List.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="PwdPage.aspx" />
+    <Content Include="RedispatchPage.aspx" />
+    <Content Include="Styles\cat.png" />
     <Content Include="Styles\Login.css" />
     <Content Include="Styles\Default.css" />
     <Content Include="Styles\logout.png" />
     <Content Include="Styles\logout2.png" />
     <Content Include="Styles\SubPage.css" />
     <Content Include="Styles\bg.jpg" />
+    <Content Include="UploadPage.aspx" />
     <Content Include="UserChangePwd.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -80,6 +83,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BCryptHelper.cs" />
+    <Compile Include="RedispatchPage.aspx.cs">
+      <DependentUpon>RedispatchPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RedispatchPage.aspx.designer.cs">
+      <DependentUpon>RedispatchPage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Salt_Hash\SaltBCryptHelper.cs" />
     <Compile Include="Home.aspx.cs">
       <DependentUpon>Home.aspx</DependentUpon>
@@ -111,6 +121,13 @@
       <DependentUpon>PwdPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Sql.cs" />
+    <Compile Include="UploadPage.aspx.cs">
+      <DependentUpon>UploadPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UploadPage.aspx.designer.cs">
+      <DependentUpon>UploadPage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="UserChangePwd.aspx.cs">
       <DependentUpon>UserChangePwd.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

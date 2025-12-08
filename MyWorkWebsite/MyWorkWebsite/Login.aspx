@@ -5,6 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>Login</title>
+    <link rel="icon" type="image/x-icon" href="Styles/cat.png" />
     <link href="Styles/Login.css" rel="Stylesheet"/>
     <!--[if IE]><link href="IE_Styles/IELogin.css" type="text/css" rel="Stylesheet"/><![endif]-->
 </head>

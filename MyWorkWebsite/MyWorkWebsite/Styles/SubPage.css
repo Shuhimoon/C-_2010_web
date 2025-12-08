@@ -131,5 +131,62 @@
 
 
 
+/*Drop File*/
+#dropZone {
+    width: 50%;
+    height: 300px;
+    border: 2px dashed #ccc;
+    position: absolute;
+    top: 20%;
+    left: 25%;
+    padding: 20px;
+    margin: 20px auto;
+    overflow-y: auto; /* 如果檔案多，允許滾動 */
+    font-size: 20px;
+}
 
-    
+#dropZone p{
+    position: absolute;
+    top: 40%;
+    left: 40%;
+    color: #666;
+}
+
+#dropZone.dragover {
+    border-color: #000;
+    background: #f0f0f0;
+}
+.file-item {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+.file-icon {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    background-color: #eee;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    color: #fff;
+    border-radius: 5px;
+}
+.file-icon.pdf { background-color: #f00; } /* PDF 紅色 */
+.file-icon.doc { background-color: #00f; } /* DOC 藍色 */
+.file-icon.img { width: 40px; height: 40px; object-fit: cover; } /* 圖片預覽 */
+.file-icon.default { background-color: #888; } /* 其他檔案 */
+.file-info { flex: 1; }
+.delete-btn {
+    margin-left: 10px;
+    padding: 5px;
+    background: none; /* 透明背景，像圖示 */
+    border: none;
+    cursor: pointer;
+    font-size: 24px; /* 圖示大小 */
+    color: #f00; 
+}

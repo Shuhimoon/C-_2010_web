@@ -41,6 +41,13 @@ namespace MyWorkWebsite
             Response.Redirect("Login.aspx");
             Session["UserName"] = null;
         }
+        protected void lnkRedispatchPage_Click(object sender, EventArgs e)
+        {
+            
+        }
+        protected void lnkUploadPage_Click(object sender, EventArgs e)
+        {
 
+        }
     }
 }

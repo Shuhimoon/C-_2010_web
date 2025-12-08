@@ -5,6 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>List</title>
+    <link rel="icon" type="image/x-icon" href="Styles/cat.png" />
     <link href="Styles/Default.css" rel="Stylesheet" />
     <!--[if IE]><link href="IE_Styles/IEDefault.css" type="text/css" rel="Stylesheet"/><![endif]-->
 </head>
@@ -17,7 +18,9 @@
             <h3>Directory</h3>
             <hr/>
             <asp:LinkButton ID="HomePage" CssClass="linkBtn" OnClick="lnkHPage_Click" runat="server">Home</asp:LinkButton><br/><br/>
-            <asp:LinkButton ID="UserPage" CssClass="linkBtn" OnClick="lnkUserPage_Click" runat="server">User</asp:LinkButton> 
+            <asp:LinkButton ID="UserPage" CssClass="linkBtn" OnClick="lnkUserPage_Click" runat="server">User</asp:LinkButton><br/><br/>
+            <asp:LinkButton ID="RedispatchPage" CssClass="linkBtn" OnClick="lnkRedispatchPage_Click" runat="server">改簽派人員</asp:LinkButton><br/><br/>
+            <asp:LinkButton ID="UploadPage" CssClass="linkBtn" OnClick="lnkUploadPage_Click" runat="server">Upload File</asp:LinkButton><br/><br/>
             <asp:LinkButton ID="logout" CssClass="lgBtn" OnClick="logoutPage_Click" runat="server"></asp:LinkButton> 
         </div>
         

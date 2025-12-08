@@ -5,6 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>User</title>
+    <link rel="icon" type="image/x-icon" href="Styles/cat.png" />
     <link href="Styles/SubPage.css" rel="Stylesheet" />
     <!--[if IE]><link href="IE_SubPage/IESubPage.css" type="text/css" rel="Stylesheet"/><![endif]-->
 </head>
