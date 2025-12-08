@@ -14,7 +14,7 @@ body {
 h1{
     /*絕對定位 非 static 容器 會參考頁面逕行絕對定位*/
     position: absolute;
-    top: 92%;
+    top: 90%;
     left: 85%;
     margin: 20px;
     color: #FFE2BA;
@@ -23,7 +23,7 @@ h1{
 .bk{
     /*絕對定位 非 static 容器 會參考頁面逕行絕對定位*/
     position: absolute;
-    top: calc(92% + 4px);
+    top: calc(90% + 4px);
     left: calc(85% + 4px);
     margin: 20px;
     color: rgba(65, 98, 78, 0.2);
@@ -148,10 +148,10 @@ h3{
 
 
 /*Logout image*/
-.lgBtn{
+.listContainer .lgBtn{
     position: absolute;
-    top:  93%;
-    left: 75%;
+    top:  92%;
+    left: 70%;
     background-image: url(logout.png);
     background-size: contain;
     background-repeat: no-repeat;
@@ -162,7 +162,7 @@ h3{
     
 }
 
-.lgBtn:hover{
+.listContainer .lgBtn:hover{
     background-image: url(logout2.png);
 
 }
