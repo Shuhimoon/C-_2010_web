@@ -130,15 +130,39 @@
 
 
 
+.Zone{
+    text-align:center;
+    position: absolute;
+    top: 10%;
+    left: 30%;
+    
+}
+.Zone .input{
+    background: transparent;
+    width: 500px;
+    border: 1px solid #576b5f;
+    height: 30px;
+}
+
+/*單獨控制提示文字顏色*/
+.Zone .input::placeholder {
+    color: #999;        /* 你想要的灰色程度 */
+    opacity: 1;         /* 重要！因為有些瀏覽器預設 opacity < 1 */
+}
+
+.Zone .input:focus::placeholder {
+    color: transparent; /* 也可以設成透明，讓聚焦時完全看不到 */
+}
+
 
 /*Drop File*/
 #dropZone {
-    width: 50%;
-    height: 300px;
-    border: 2px dashed #ccc;
+    width: 81%;
+    height: 650px;
+    border: 2px dashed #576b5f;
     position: absolute;
-    top: 20%;
-    left: 25%;
+    top: 15%;
+    left: 6%;
     padding: 20px;
     margin: 20px auto;
     overflow-y: auto; /* 如果檔案多，允許滾動 */
@@ -181,6 +205,15 @@
 .file-icon.img { width: 40px; height: 40px; object-fit: cover; } /* 圖片預覽 */
 .file-icon.default { background-color: #888; } /* 其他檔案 */
 .file-info { flex: 1; }
+.file-name-input  {
+    width: 20%; 
+    border-radius: 6px; 
+    height:20px; 
+    font-size:18px; 
+    border: 1px solid #ddd;
+    text-align:center;
+}
+
 .delete-btn {
     margin-left: 10px;
     padding: 5px;

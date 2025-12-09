@@ -65,7 +65,7 @@
     <Content Include="Styles\logout2.png" />
     <Content Include="Styles\SubPage.css" />
     <Content Include="Styles\bg.jpg" />
-    <Content Include="UploadPage.aspx" />
+    <Content Include="UploadPage\UploadPage.aspx" />
     <Content Include="UserChangePwd.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -121,11 +121,14 @@
       <DependentUpon>PwdPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Sql.cs" />
-    <Compile Include="UploadPage.aspx.cs">
+    <Compile Include="UploadPage\UploadHandler.ashx.cs">
+      <DependentUpon>UploadHandler.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="UploadPage\UploadPage.aspx.cs">
       <DependentUpon>UploadPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="UploadPage.aspx.designer.cs">
+    <Compile Include="UploadPage\UploadPage.aspx.designer.cs">
       <DependentUpon>UploadPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="UserChangePwd.aspx.cs">
@@ -135,6 +138,12 @@
     <Compile Include="UserChangePwd.aspx.designer.cs">
       <DependentUpon>UserChangePwd.aspx</DependentUpon>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="UploadPage\UploadHandler.ashx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Modle\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

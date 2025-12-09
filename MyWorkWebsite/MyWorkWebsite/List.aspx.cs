@@ -26,6 +26,16 @@ namespace MyWorkWebsite
             {
                 subPage.Attributes["src"] = "UserChangePwd.aspx";
             }
+            else if (Request.QueryString["page"] == "upload")
+            {
+                subPage.Attributes["src"] = "/UploadPage/UploadPage.aspx";
+
+            }
+            else if (Request.QueryString["page"] == "redispatch")
+            {
+                subPage.Attributes["src"] = "RedispatchPage.aspx";
+            }
+
         }
         protected void lnkHPage_Click(object sender, EventArgs e)
         {
@@ -43,11 +53,11 @@ namespace MyWorkWebsite
         }
         protected void lnkRedispatchPage_Click(object sender, EventArgs e)
         {
-            
+            Response.Redirect("List.aspx?page=redispatch");
         }
         protected void lnkUploadPage_Click(object sender, EventArgs e)
         {
-
+            Response.Redirect("List.aspx?page=upload");
         }
     }
 }

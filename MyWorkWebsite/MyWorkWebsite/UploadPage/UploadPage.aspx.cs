@@ -11,6 +11,19 @@ namespace MyWorkWebsite
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["UserName"] == null)
+            {
+                Response.Redirect("~/Login.aspx");
+            }
+        }
+
+        protected void AddressConfirmButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void AddressInput_TextChanged(object sender, EventArgs e)
+        {
 
         }
     }
