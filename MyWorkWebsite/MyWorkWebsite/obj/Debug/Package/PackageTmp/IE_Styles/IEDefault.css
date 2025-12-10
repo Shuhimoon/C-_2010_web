@@ -1,0 +1,35 @@
+﻿html,body{
+    width: auto;
+    height:100%;
+    
+    /*禁止滾動條*/
+    overflow: hidden;
+}  
+body {
+    /*由左到右漸成變色*/
+    display:flex;
+    align-items: center;
+    justify-content:center;
+    text-align:center;
+    background: linear-gradient(270deg,#FFCCE6,#D6B0FF);
+}
+
+h1{
+    /*絕對定位 非 static 容器 會參考頁面逕行絕對定位*/
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 20px;
+    color: #F3D7FA;
+}
+
+.bk{
+    /*絕對定位 非 static 容器 會參考頁面逕行絕對定位*/
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    margin: 20px;
+    color: rgba(129, 90, 143, 0.2);
+}
+
+

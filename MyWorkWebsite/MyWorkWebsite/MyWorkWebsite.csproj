@@ -65,7 +65,7 @@
     <Content Include="Styles\logout2.png" />
     <Content Include="Styles\SubPage.css" />
     <Content Include="Styles\bg.jpg" />
-    <Content Include="UploadPage\UploadPage.aspx" />
+    <Content Include="UploadPagesFile\UploadPage.aspx" />
     <Content Include="UserChangePwd.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -121,14 +121,14 @@
       <DependentUpon>PwdPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Sql.cs" />
-    <Compile Include="UploadPage\UploadHandler.ashx.cs">
+    <Compile Include="UploadPagesFile\UploadHandler.ashx.cs">
       <DependentUpon>UploadHandler.ashx</DependentUpon>
     </Compile>
-    <Compile Include="UploadPage\UploadPage.aspx.cs">
+    <Compile Include="UploadPagesFile\UploadPage.aspx.cs">
       <DependentUpon>UploadPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="UploadPage\UploadPage.aspx.designer.cs">
+    <Compile Include="UploadPagesFile\UploadPage.aspx.designer.cs">
       <DependentUpon>UploadPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="UserChangePwd.aspx.cs">
@@ -140,7 +140,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="UploadPage\UploadHandler.ashx" />
+    <Content Include="UploadPagesFile\UploadHandler.ashx" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Modle\" />

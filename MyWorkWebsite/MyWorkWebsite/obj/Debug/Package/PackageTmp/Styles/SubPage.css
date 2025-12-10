@@ -1,0 +1,225 @@
+﻿html,body{
+    /*禁止滾動條*/
+    overflow: hidden;
+    width: auto;
+    height:100%;
+    
+} 
+
+.btn{
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    
+    margin-left: 20px;
+    
+    width: 70px;
+    height: 35px;
+}
+
+.input{
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    height: 25px;
+    margin: 0 0 0 10px;
+    font-size: 15px;
+    text-align:center;
+}
+
+
+#homesay{
+    color: #5CA396;
+    position: absolute;
+    top: 45%;
+    left:40%;
+}
+
+.namefield{
+    position: absolute;
+    top: 3%;
+    left: 2%;
+}
+
+
+.confirmbox{
+    position: absolute;
+    top: 40%;
+    left: 30%;
+    text-align:center;
+    display: none;
+    width: 320px;
+    height: 150px;
+    background: white;
+    border-radius: 6px;
+    border: 2px solid rgba(189 ,168 ,189 , 0.5);
+    
+}
+
+.confirmbox p{
+    color: Red;
+    margin-top: 45px;
+}
+
+.confirmbox .btn{
+    margin-top: 15px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*顯示資料*/
+.userlist {
+    width: 92%; /* 固定寬度 */
+    margin-left:1%;
+    margin-top:5%; 
+    text-align: left; /* 左對齊內部文字 */
+}
+.entry-card {
+    display: block; /* 塊級顯示，IE7 支持 */
+    margin: 10px 0; /* 上下間距 */
+    padding: 10px; /* 內距 */
+    border: 1px solid #fff; /* 灰色邊框 */
+    background-color: #fff; /* 白色背景，避免 IE7 透明問題 */
+    border-radius: 12px;
+}
+.entry-header {
+    display: block; /* 塊級顯示 */
+    margin-bottom: 5px; /* 下間距 */
+    font-weight: bold; /* 粗體文字 */
+    color: #333; /* 深灰文字 */
+}
+.entry-title {
+    color: #A1A3E3; /* 藍色標題 */
+    font-size: 18px;
+}
+.entry-body {
+    display: block; /* 塊級顯示 */
+    margin-bottom: 10px; /* 下間距 */
+    color: #666; /* 淺灰文字 */
+}
+.entry-actions {
+    display: block; /* 塊級顯示 */
+    text-align: right; /* 右對齊按鈕 */
+}
+
+.btn-warning {
+    background: linear-gradient(270deg,#C0C3EB,#FFFFFF);
+    border: 0px solid;
+}
+.btn-danger {
+    background: linear-gradient(270deg,#FF0000,#FFFFFF);
+    border: 0px solid;
+}
+/* 清浮動 hack，IE7 支持 */
+.clearfix:after {
+    content: "."; /* IE7 清浮動 */
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+
+
+.Zone{
+    text-align:center;
+    position: absolute;
+    top: 10%;
+    left: 30%;
+    
+}
+.Zone .input{
+    background: transparent;
+    width: 500px;
+    border: 1px solid #576b5f;
+    height: 30px;
+}
+
+/*單獨控制提示文字顏色*/
+.Zone .input::placeholder {
+    color: #999;        /* 你想要的灰色程度 */
+    opacity: 1;         /* 重要！因為有些瀏覽器預設 opacity < 1 */
+}
+
+.Zone .input:focus::placeholder {
+    color: transparent; /* 也可以設成透明，讓聚焦時完全看不到 */
+}
+
+
+/*Drop File*/
+#dropZone {
+    width: 81%;
+    height: 650px;
+    border: 2px dashed #576b5f;
+    position: absolute;
+    top: 15%;
+    left: 6%;
+    padding: 20px;
+    margin: 20px auto;
+    overflow-y: auto; /* 如果檔案多，允許滾動 */
+    font-size: 20px;
+}
+
+#dropZone p{
+    position: absolute;
+    top: 40%;
+    left: 40%;
+    color: #666;
+}
+
+#dropZone.dragover {
+    border-color: #000;
+    background: #f0f0f0;
+}
+.file-item {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+.file-icon {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    background-color: #eee;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    color: #fff;
+    border-radius: 5px;
+}
+.file-icon.pdf { background-color: #f00; } /* PDF 紅色 */
+.file-icon.doc { background-color: #00f; } /* DOC 藍色 */
+.file-icon.img { width: 40px; height: 40px; object-fit: cover; } /* 圖片預覽 */
+.file-icon.default { background-color: #888; } /* 其他檔案 */
+.file-info { flex: 1; }
+.file-name-input  {
+    width: 20%; 
+    border-radius: 6px; 
+    height:20px; 
+    font-size:18px; 
+    border: 1px solid #ddd;
+    text-align:center;
+}
+
+.delete-btn {
+    margin-left: 10px;
+    padding: 5px;
+    background: none; /* 透明背景，像圖示 */
+    border: none;
+    cursor: pointer;
+    font-size: 24px; /* 圖示大小 */
+    color: #f00; 
+}

@@ -1,0 +1,70 @@
+﻿html,body{
+    width:100%;
+    height:100%;
+    
+    /*移除邊界白條*/
+    margin: 0;
+}  
+body {
+    /*由左到右漸成變色*/
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#D6B0FF',endColorstr='#FFCCE6',GradientType=1);
+    
+}
+
+h1{
+    /*絕對定位 非 static 容器 會參考頁面逕行絕對定位*/
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 20px;
+    color: #F3D7FA;
+}
+
+.bk{
+    /*絕對定位 非 static 容器 會參考頁面逕行絕對定位*/
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    margin: 20px;
+    color: #D7CADB;
+}
+
+.Container{
+    text-align:center; /*水平置中*/
+    /*IE 7垂直置中*/
+    position: relative;
+    top:30%;
+    
+    /*容器大小 這邊設定成固定的因為破IE不能RWD*/
+    width: 320px;
+    height:220px;
+    padding: 50px 30px 30px 30px;
+    
+    /*Color*/
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#D6B0FF',endColorstr='#ECE3F6',GradientType=1);
+    
+}
+
+.ContainerSub{
+    zoom: 1;              /* 觸發 hasLayout，讓 inline-block 在 IE7 生效 */
+    width: 260px;
+    
+}
+
+.btn{
+    margin: 1% 0 0 0;
+    width: 70px;
+    height: 30px;
+}
+
+.input{
+    margin-top: 25px;
+    width: auto;
+    height: 20px;
+}
+
+.confirmbox{
+    position: absolute;
+    top: 40%;
+    left: 39.5%;
+}

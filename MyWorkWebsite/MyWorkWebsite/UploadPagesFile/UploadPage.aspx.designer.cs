@@ -7,7 +7,7 @@
 // </自動產生的>
 //------------------------------------------------------------------------------
 
-namespace MyWorkWebsite {
+namespace MyWorkWebsite.UploadPagesFile {
     
     
     public partial class UploadPage {

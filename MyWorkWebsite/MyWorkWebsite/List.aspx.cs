@@ -28,7 +28,7 @@ namespace MyWorkWebsite
             }
             else if (Request.QueryString["page"] == "upload")
             {
-                subPage.Attributes["src"] = "/UploadPage/UploadPage.aspx";
+                subPage.Attributes["src"] = "/UploadPagesFile/UploadPage.aspx";
 
             }
             else if (Request.QueryString["page"] == "redispatch")

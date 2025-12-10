@@ -5,7 +5,7 @@ using System.Web;
 using System.IO;
 using System.Diagnostics;
 
-namespace MyWorkWebsite
+namespace MyWorkWebsite.UploadPagesFile
 {
     /// <summary>
     ///UploadHandler 的摘要描述

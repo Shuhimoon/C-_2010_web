@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace MyWorkWebsite
+namespace MyWorkWebsite.UploadPagesFile
 {
     public partial class UploadPage : System.Web.UI.Page
     {
