@@ -1,4 +1,30 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <publishData>
-  <publishProfile publishUrl="C:\inetpub\wwwroot\shuhi" deleteExistingFiles="False" ftpAnonymousLogin="False" ftpPassiveMode="True" msdeploySite="" msdeploySiteID="" msdeployRemoteSitePhysicalPath="" msdeployAllowUntrustedCertificate="False" msdeploySkipExtraFilesOnServer="True" msdeployMarkAsApp="False" profileName="shuhiweb" publishMethod="FileSystem" replaceMatchingFiles="True" userName="" savePWD="False" userPWD="" SelectedForPublish="True" />
+  <publishProfile publishUrl="C:\inetpub\wwwroot\shuhi" deleteExistingFiles="False" ftpAnonymousLogin="False" ftpPassiveMode="True" msdeploySite="" msdeploySiteID="" msdeployRemoteSitePhysicalPath="" msdeployAllowUntrustedCertificate="False" msdeploySkipExtraFilesOnServer="True" msdeployMarkAsApp="False" profileName="shuhiweb" publishMethod="FileSystem" replaceMatchingFiles="True" userName="" savePWD="False" userPWD="" SelectedForPublish="True">
+    <file relUrl="UserChangePwd.aspx" publishTime="12/10/2025 11:05:35" />
+    <file relUrl="DarkStyles/Default.css" publishTime="12/10/2025 11:05:35" />
+    <file relUrl="UploadPagesFile/UploadHandler.ashx" publishTime="12/11/2025 10:06:14" />
+    <file relUrl="DarkStyles/Login.css" publishTime="12/10/2025 11:05:35" />
+    <file relUrl="PwdPage.aspx" publishTime="12/10/2025 11:05:35" />
+    <file relUrl="IE_Styles/IELogin.css" publishTime="12/10/2025 11:05:35" />
+    <file relUrl="bin/MyWorkWebsite.pdb" publishTime="12/11/2025 10:06:19" />
+    <file relUrl="List.aspx" publishTime="12/10/2025 11:05:35" />
+    <file relUrl="Styles/bg.jpg" publishTime="12/10/2025 11:05:35" />
+    <file relUrl="IE_Styles/IEDefault.css" publishTime="12/10/2025 11:05:35" />
+    <file relUrl="IE_Styles/IESubPage.css" publishTime="12/10/2025 11:05:35" />
+    <file relUrl="RedispatchPage.aspx" publishTime="12/10/2025 11:05:35" />
+    <file relUrl="Styles/cat.png" publishTime="12/10/2025 11:05:35" />
+    <file relUrl="Styles/SubPage.css" publishTime="12/10/2025 11:05:35" />
+    <file relUrl="Styles/Login.css" publishTime="12/10/2025 11:05:35" />
+    <file relUrl="bin/MyWorkWebsite.dll" publishTime="12/11/2025 10:06:20" />
+    <file relUrl="Styles/logout.png" publishTime="12/10/2025 11:05:35" />
+    <file relUrl="Handler1.ashx" publishTime="12/11/2025 09:56:51" />
+    <file relUrl="Styles/logout2.png" publishTime="12/10/2025 11:05:35" />
+    <file relUrl="DarkStyles/SubPage.css" publishTime="12/10/2025 11:05:35" />
+    <file relUrl="Styles/Default.css" publishTime="12/10/2025 11:05:35" />
+    <file relUrl="UploadPagesFile/UploadPage.aspx" publishTime="12/11/2025 09:42:13" />
+    <file relUrl="Web.config" publishTime="12/10/2025 17:12:59" />
+    <file relUrl="Login.aspx" publishTime="12/10/2025 11:05:35" />
+    <file relUrl="Home.aspx" publishTime="12/10/2025 11:05:35" />
+  </publishProfile>
 </publishData>

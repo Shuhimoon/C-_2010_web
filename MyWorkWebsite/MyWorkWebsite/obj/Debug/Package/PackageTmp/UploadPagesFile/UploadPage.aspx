@@ -132,7 +132,7 @@
                     formData.append('files[]', newFile);
                 });
 
-                fetch('/UploadPage/UploadHandler.ashx', {
+                fetch('/UploadPagesFile/UploadHandler.ashx', {
                     method: 'POST',
                     body: formData
                 })

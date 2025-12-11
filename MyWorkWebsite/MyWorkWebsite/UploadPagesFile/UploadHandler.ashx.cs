@@ -73,7 +73,7 @@ namespace MyWorkWebsite.UploadPagesFile
                 Uri uri = new Uri(input);
                 string host = uri.Host;
                 string path = uri.AbsolutePath.TrimStart('/').Replace('/', '\\');
-                return @"\\" + host + @"\d$\" + path;
+                return @"\\" + host + @"\c$\inetpub\wwwroot\shuhi\DataFolder" + path;
             }
             else
             {
