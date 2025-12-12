@@ -20,11 +20,25 @@
     border-radius: 6px;
     border: 1px solid rgba(255, 255, 255, 0.06);
     height: 25px;
-    margin: 0 0 0 10px;
+    margin: 0 20px 0 10px;
     font-size: 15px;
     text-align:center;
 }
 
+.dropdown{
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    height: 30px;
+    margin: 0 20px 0 10px;
+    font-size: 16px;
+    text-align: center;
+    background-color: #AED4C4;
+}
+
+.dropdown option {
+    background-color: #AED4C4; /* 選項背景 */
+    color: #000000; /* 選項文字 */
+}
 
 #homesay{
     color: #5CA396;
@@ -223,3 +237,53 @@
     font-size: 24px; /* 圖示大小 */
     color: #f00; 
 }
+
+
+
+/* Table style */
+.Ex{
+    position: absolute; 
+    top: 3%; 
+    left: 73%;
+}
+.Ex:hover{
+    display: block;
+}
+
+.tb{
+    display: none;
+    position: absolute;
+    top: 8%;
+    left: 57%;
+    border-collapse: separate;
+    border-spacing: 0;
+    border: 0px solid;
+    text-align:center;
+}
+tr{
+  border: 1px solid #E0607E;
+}
+td{
+  border: 1px solid #607ee0;
+  padding: 10px 30px;
+  
+}
+
+/*第一欄第一列：左上*/
+tr:first-child td:first-child{
+  border-top-left-radius: 10px;
+}
+/*第一欄最後列：左下*/
+tr:last-child td:first-child{
+  border-bottom-left-radius: 10px;
+}
+/*最後欄第一列：右上*/
+tr:first-child td:last-child{
+  border-top-right-radius: 10px;
+}
+/*最後欄第一列：右下*/
+tr:last-child td:last-child{
+  border-bottom-right-radius: 10px;
+}
+
+

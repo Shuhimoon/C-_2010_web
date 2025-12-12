@@ -144,7 +144,9 @@ namespace MyWorkWebsite
             }
             catch (Exception ex)
             {
-                lblMessage.Text = "Error: " + ex.Message;  // 捕捉如連接錯誤
+                //lblMessage.Text = "Error: " + ex.Message;  // 捕捉如連接錯誤
+                showMessenger.InnerText = ex.Message;
+                errorbox.Style["display"] = "block"; 
             }
 
 

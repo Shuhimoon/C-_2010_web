@@ -13,5 +13,26 @@ namespace MyWorkWebsite
         {
 
         }
+
+        protected void RPInput_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void AppOnInput_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void PageCodeInput_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void checkBoxBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }
